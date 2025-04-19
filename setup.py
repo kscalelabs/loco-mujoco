@@ -30,3 +30,4 @@ setup(author="Firas Al-Hafez",
           loco_mujoco_smpl_package: glob_data_files(loco_mujoco_smpl_package)
       }
       )
+
