@@ -3,7 +3,7 @@
   <include file="../common/scene.xml"/>
   <include file="../common/mimic_sites.xml"/>
 
-  <compiler angle="radian" meshdir="meshes" />
+  <compiler angle="radian" />
 
   <default>
     <default class="robot">
@@ -39,30 +39,30 @@
     <material name="Torso_Side_Right_material" rgba="0.262745 0.282353 0.301961 1" />
     <material name="imu_material" rgba="0.615686 0.811765 0.929412 1" />
     <material name="default_material" rgba="0.7 0.7 0.7 1" />
-    <mesh name="Torso_Side_Right.stl" file="Torso_Side_Right.stl" />
-    <mesh name="KC_C_104R_PitchHardstopDriven.stl" file="KC_C_104R_PitchHardstopDriven.stl" />
-    <mesh name="RS03_3.stl" file="RS03_3.stl" />
-    <mesh name="KC_C_202R.stl" file="KC_C_202R.stl" />
-    <mesh name="KC_C_401R_R_UpForearmDrive.stl" file="KC_C_401R_R_UpForearmDrive.stl" />
-    <mesh name="KB_C_501X_Right_Bayonet_Adapter_Hard_Stop.stl" file="KB_C_501X_Right_Bayonet_Adapter_Hard_Stop.stl" />
-    <mesh name="imu.stl" file="imu.stl" />
-    <mesh name="KC_C_104L_PitchHardstopDriven.stl" file="KC_C_104L_PitchHardstopDriven.stl" />
-    <mesh name="RS03_6.stl" file="RS03_6.stl" />
-    <mesh name="KC_C_202L.stl" file="KC_C_202L.stl" />
-    <mesh name="KC_C_401L_L_UpForearmDrive.stl" file="KC_C_401L_L_UpForearmDrive.stl" />
-    <mesh name="KB_C_501X_Left_Bayonet_Adapter_Hard_Stop.stl" file="KB_C_501X_Left_Bayonet_Adapter_Hard_Stop.stl" />
-    <mesh name="KC_D_102R_R_Hip_Yoke_Drive.stl" file="KC_D_102R_R_Hip_Yoke_Drive.stl" />
-    <mesh name="RS03_4.stl" file="RS03_4.stl" />
-    <mesh name="KC_D_301R_R_Femur_Lower_Drive.stl" file="KC_D_301R_R_Femur_Lower_Drive.stl" />
-    <mesh name="KC_D_401R_R_Shin_Drive.stl" file="KC_D_401R_R_Shin_Drive.stl" />
-    <mesh name="KB_D_501R_R_LEG_FOOT.collision.stl" file="KB_D_501R_R_LEG_FOOT.collision.stl" />
-    <mesh name="KB_D_501R_R_LEG_FOOT.stl" file="KB_D_501R_R_LEG_FOOT.stl" />
-    <mesh name="KC_D_102L_L_Hip_Yoke_Drive.stl" file="KC_D_102L_L_Hip_Yoke_Drive.stl" />
-    <mesh name="RS03_5.stl" file="RS03_5.stl" />
-    <mesh name="KC_D_301L_L_Femur_Lower_Drive.stl" file="KC_D_301L_L_Femur_Lower_Drive.stl" />
-    <mesh name="KC_D_401L_L_Shin_Drive.stl" file="KC_D_401L_L_Shin_Drive.stl" />
-    <mesh name="KB_D_501L_L_LEG_FOOT.collision.stl" file="KB_D_501L_L_LEG_FOOT.collision.stl" />
-    <mesh name="KB_D_501L_L_LEG_FOOT.stl" file="KB_D_501L_L_LEG_FOOT.stl" />
+    <mesh name="Torso_Side_Right.stl" file="meshes/Torso_Side_Right.stl" />
+    <mesh name="KC_C_104R_PitchHardstopDriven.stl" file="meshes/KC_C_104R_PitchHardstopDriven.stl" />
+    <mesh name="RS03_3.stl" file="meshes/RS03_3.stl" />
+    <mesh name="KC_C_202R.stl" file="meshes/KC_C_202R.stl" />
+    <mesh name="KC_C_401R_R_UpForearmDrive.stl" file="meshes/KC_C_401R_R_UpForearmDrive.stl" />
+    <mesh name="KB_C_501X_Right_Bayonet_Adapter_Hard_Stop.stl" file="meshes/KB_C_501X_Right_Bayonet_Adapter_Hard_Stop.stl" />
+    <mesh name="imu.stl" file="meshes/imu.stl" />
+    <mesh name="KC_C_104L_PitchHardstopDriven.stl" file="meshes/KC_C_104L_PitchHardstopDriven.stl" />
+    <mesh name="RS03_6.stl" file="meshes/RS03_6.stl" />
+    <mesh name="KC_C_202L.stl" file="meshes/KC_C_202L.stl" />
+    <mesh name="KC_C_401L_L_UpForearmDrive.stl" file="meshes/KC_C_401L_L_UpForearmDrive.stl" />
+    <mesh name="KB_C_501X_Left_Bayonet_Adapter_Hard_Stop.stl" file="meshes/KB_C_501X_Left_Bayonet_Adapter_Hard_Stop.stl" />
+    <mesh name="KC_D_102R_R_Hip_Yoke_Drive.stl" file="meshes/KC_D_102R_R_Hip_Yoke_Drive.stl" />
+    <mesh name="RS03_4.stl" file="meshes/RS03_4.stl" />
+    <mesh name="KC_D_301R_R_Femur_Lower_Drive.stl" file="meshes/KC_D_301R_R_Femur_Lower_Drive.stl" />
+    <mesh name="KC_D_401R_R_Shin_Drive.stl" file="meshes/KC_D_401R_R_Shin_Drive.stl" />
+    <mesh name="KB_D_501R_R_LEG_FOOT.collision.stl" file="meshes/KB_D_501R_R_LEG_FOOT.collision.stl" />
+    <mesh name="KB_D_501R_R_LEG_FOOT.stl" file="meshes/KB_D_501R_R_LEG_FOOT.stl" />
+    <mesh name="KC_D_102L_L_Hip_Yoke_Drive.stl" file="meshes/KC_D_102L_L_Hip_Yoke_Drive.stl" />
+    <mesh name="RS03_5.stl" file="meshes/RS03_5.stl" />
+    <mesh name="KC_D_301L_L_Femur_Lower_Drive.stl" file="meshes/KC_D_301L_L_Femur_Lower_Drive.stl" />
+    <mesh name="KC_D_401L_L_Shin_Drive.stl" file="meshes/KC_D_401L_L_Shin_Drive.stl" />
+    <mesh name="KB_D_501L_L_LEG_FOOT.collision.stl" file="meshes/KB_D_501L_L_LEG_FOOT.collision.stl" />
+    <mesh name="KB_D_501L_L_LEG_FOOT.stl" file="meshes/KB_D_501L_L_LEG_FOOT.stl" />
   </asset>
 
   <worldbody>
