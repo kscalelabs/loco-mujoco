@@ -1,0 +1,50 @@
+# Inherits from defaults.yaml
+
+# Map mimic sites from kbot_v2.xml to SMPL joint names
+site_joint_matches:
+  pelvis_mimic:
+    smpl_joint: Pelvis
+  upper_body_mimic:
+    smpl_joint: Spine3 # Or Spine2, depending on desired torso tracking
+  head_mimic:
+    smpl_joint: Head
+  left_shoulder_mimic:
+    smpl_joint: L_Collar # Often used as shoulder base
+  left_elbow_mimic:
+    smpl_joint: L_Elbow
+  left_wrist_mimic:
+    smpl_joint: L_Wrist
+  left_hip_mimic:
+    smpl_joint: L_Hip
+  left_knee_mimic:
+    smpl_joint: L_Knee
+  left_ankle_mimic: # Using the ankle mimic site we added
+    smpl_joint: L_Ankle
+  left_foot: # Using the original foot site (also marked as mimic)
+    smpl_joint: L_Foot # Map to foot end if needed
+  right_shoulder_mimic:
+    smpl_joint: R_Collar # Often used as shoulder base
+  right_elbow_mimic:
+    smpl_joint: R_Elbow
+  right_wrist_mimic:
+    smpl_joint: R_Wrist
+  right_hip_mimic:
+    smpl_joint: R_Hip
+  right_knee_mimic:
+    smpl_joint: R_Knee
+  right_ankle_mimic: # Using the ankle mimic site we added
+    smpl_joint: R_Ankle
+  right_foot: # Using the original foot site (also marked as mimic)
+    smpl_joint: R_Foot # Map to foot end if needed
+
+# Robot-specific T-pose adjustments (if needed, otherwise empty)
+# Example: If your robot's default pose isn't quite T-pose
+# robot_pose_modifier:
+#   - dof_right_shoulder_roll_03: "0.1" # Add a small radian offset
+
+# Optimization parameters (override defaults if needed)
+optimization_params:
+  z_offset_feet: 0.0 # Adjust if feet are not at z=0 in T-pose retargeting
+
+# Environment parameters (can be empty if defaults are okay)
+env_params: {} 

@@ -1,18 +1,37 @@
 import numpy as np
-from loco_mujoco.task_factories import ImitationFactory, LAFAN1DatasetConf, DefaultDatasetConf, AMASSDatasetConf
+import os
+from pathlib import Path
+# Import the specific environment directly
+from loco_mujoco.environments import UnitreeG1
 
+# --- Configuration ---
+# Define the EXACT path to YOUR local trajectory file
+# Use the absolute path you provided
+local_squat_traj_path = Path("/home/ali/repos/ksim_stuff/loco-mujoco/loco_mujoco/datasets/local/UnitreeG1/squat.npz")
 
-# # example --> you can add as many datasets as you want in the lists!
-env = ImitationFactory.make("UnitreeH1",
-                            default_dataset_conf=DefaultDatasetConf(["squat", "walk"]),
-                            lafan1_dataset_conf=LAFAN1DatasetConf(["dance2_subject4", "walk1_subject1"]),
-                            # if SMPL and AMASS are installed, you can use the following:
-                            # amass_dataset_conf=AMASSDatasetConf(["DanceDB/DanceDB/20120911_TheodorosSourmelis/Capoeira_Theodoros_v2_C3D_poses",
-                            #                                     "KIT/12/WalkInClockwiseCircle11_poses",
-                            #                                     "HUMAN4D/HUMAN4D/Subject3_Medhi/INF_JumpingJack_S3_01_poses",
-                            #                                     'KIT/359/walking_fast05_poses']),
-                            n_substeps=20)
+# Check if the source trajectory file exists
+if not local_squat_traj_path.exists():
+    print(f"Error: Local trajectory file not found at {local_squat_traj_path}")
+    print("Please ensure the path is correct.")
+    exit()
 
-env.play_trajectory(n_episodes=3, n_steps_per_episode=500, render=True)
+# --- Create UnitreeG1 Environment ---
+print("Creating UnitreeG1 environment...")
+# Instantiate the environment directly.
+# Remove th_params, load_trajectory will handle control_dt.
+env = UnitreeG1()
+print("Environment created.")
+
+# --- Load the Local Trajectory ---
+print(f"Loading trajectory from {local_squat_traj_path}...")
+# Use the correct load_trajectory method with traj_path
+env.load_trajectory(traj_path=str(local_squat_traj_path))
+print("Trajectory loaded.")
+
+# --- Play the Trajectory ---
+print("Playing trajectory...")
+# Play one short episode
+env.play_trajectory(n_episodes=1, n_steps_per_episode=500, render=True)
+print("Playback finished.")
 
 
