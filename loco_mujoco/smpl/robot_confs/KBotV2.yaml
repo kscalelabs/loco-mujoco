@@ -4,43 +4,77 @@
 site_joint_matches:
   pelvis_mimic:
     smpl_joint: Pelvis
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   upper_body_mimic:
-    smpl_joint: Spine3 # Or Spine2, depending on desired torso tracking
+    smpl_joint: Chest
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   head_mimic:
     smpl_joint: Head
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   left_shoulder_mimic:
-    smpl_joint: L_Collar # Often used as shoulder base
+    smpl_joint: L_Shoulder
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   left_elbow_mimic:
     smpl_joint: L_Elbow
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   left_wrist_mimic:
     smpl_joint: L_Wrist
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   left_hip_mimic:
     smpl_joint: L_Hip
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   left_knee_mimic:
     smpl_joint: L_Knee
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   left_ankle_mimic: # Using the ankle mimic site we added
     smpl_joint: L_Ankle
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   left_foot: # Using the original foot site (also marked as mimic)
-    smpl_joint: L_Foot # Map to foot end if needed
+    smpl_joint: L_Toe
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   right_shoulder_mimic:
-    smpl_joint: R_Collar # Often used as shoulder base
+    smpl_joint: R_Shoulder
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   right_elbow_mimic:
     smpl_joint: R_Elbow
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   right_wrist_mimic:
     smpl_joint: R_Wrist
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   right_hip_mimic:
     smpl_joint: R_Hip
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   right_knee_mimic:
     smpl_joint: R_Knee
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   right_ankle_mimic: # Using the ankle mimic site we added
     smpl_joint: R_Ankle
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
   right_foot: # Using the original foot site (also marked as mimic)
-    smpl_joint: R_Foot # Map to foot end if needed
+    smpl_joint: R_Toe
+    equality_constraint_type: mjEQ_WELD
+    torque_scale: 1.0
 
 # Robot-specific T-pose adjustments (if needed, otherwise empty)
 # Example: If your robot's default pose isn't quite T-pose
 # robot_pose_modifier:
-#   - dof_right_shoulder_roll_03: "0.1" # Add a small radian offset
+#   - dof_right_shoulder_roll_03: "[0.0, 0.0, -1.57]" # Example: Roll right shoulder -90deg
 
 # Optimization parameters (override defaults if needed)
 optimization_params:

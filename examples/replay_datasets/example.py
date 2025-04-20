@@ -2,7 +2,7 @@ import numpy as np
 import os
 from pathlib import Path
 # Import the KBotV2 environment directly
-from loco_mujoco.environments import KBotV2
+from loco_mujoco.environments import KBotV2, UnitreeG1
 
 # --- Configuration ---
 # Define the EXACT path to YOUR local trajectory file (still using the G1 squat)
@@ -17,6 +17,7 @@ if not local_g1_squat_traj_path.exists():
 # --- Create KBotV2 Environment ---
 print("Creating KBotV2 environment...")
 env = KBotV2()
+# env = UnitreeG1()
 print("Environment created.")
 
 # --- Load the Local (Unitree G1) Trajectory ---
