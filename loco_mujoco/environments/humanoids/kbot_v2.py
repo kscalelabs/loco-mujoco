@@ -74,89 +74,45 @@ class KBotV2(BaseRobotHumanoid):
         # Adapt joint names based on your kbot_v2.xml
         observation_spec = [  # ------------- JOINT POS -------------
             ObservationType.FreeJointPosNoXY("q_root", xml_name="root"),
-            ObservationType.JointPos(
-                "q_right_shoulder_pitch", xml_name="dof_right_shoulder_pitch_03"
-            ),
-            ObservationType.JointPos(
-                "q_right_shoulder_roll", xml_name="dof_right_shoulder_roll_03"
-            ),
-            ObservationType.JointPos(
-                "q_right_shoulder_yaw", xml_name="dof_right_shoulder_yaw_02"
-            ),
+            ObservationType.JointPos("q_right_shoulder_pitch", xml_name="dof_right_shoulder_pitch_03"),
+            ObservationType.JointPos("q_right_shoulder_roll", xml_name="dof_right_shoulder_roll_03"),
+            ObservationType.JointPos("q_right_shoulder_yaw", xml_name="dof_right_shoulder_yaw_02"),
             ObservationType.JointPos("q_right_elbow", xml_name="dof_right_elbow_02"),
             ObservationType.JointPos("q_right_wrist", xml_name="dof_right_wrist_00"),
-            ObservationType.JointPos(
-                "q_left_shoulder_pitch", xml_name="dof_left_shoulder_pitch_03"
-            ),
-            ObservationType.JointPos(
-                "q_left_shoulder_roll", xml_name="dof_left_shoulder_roll_03"
-            ),
-            ObservationType.JointPos(
-                "q_left_shoulder_yaw", xml_name="dof_left_shoulder_yaw_02"
-            ),
+            ObservationType.JointPos("q_left_shoulder_pitch", xml_name="dof_left_shoulder_pitch_03"),
+            ObservationType.JointPos("q_left_shoulder_roll", xml_name="dof_left_shoulder_roll_03"),
+            ObservationType.JointPos("q_left_shoulder_yaw", xml_name="dof_left_shoulder_yaw_02"),
             ObservationType.JointPos("q_left_elbow", xml_name="dof_left_elbow_02"),
             ObservationType.JointPos("q_left_wrist", xml_name="dof_left_wrist_00"),
-            ObservationType.JointPos(
-                "q_right_hip_pitch", xml_name="dof_right_hip_pitch_04"
-            ),
-            ObservationType.JointPos(
-                "q_right_hip_roll", xml_name="dof_right_hip_roll_03"
-            ),
-            ObservationType.JointPos(
-                "q_right_hip_yaw", xml_name="dof_right_hip_yaw_03"
-            ),
+            ObservationType.JointPos("q_right_hip_pitch", xml_name="dof_right_hip_pitch_04"),
+            ObservationType.JointPos("q_right_hip_roll", xml_name="dof_right_hip_roll_03"),
+            ObservationType.JointPos("q_right_hip_yaw", xml_name="dof_right_hip_yaw_03"),
             ObservationType.JointPos("q_right_knee", xml_name="dof_right_knee_04"),
             ObservationType.JointPos("q_right_ankle", xml_name="dof_right_ankle_02"),
-            ObservationType.JointPos(
-                "q_left_hip_pitch", xml_name="dof_left_hip_pitch_04"
-            ),
-            ObservationType.JointPos(
-                "q_left_hip_roll", xml_name="dof_left_hip_roll_03"
-            ),
+            ObservationType.JointPos("q_left_hip_pitch", xml_name="dof_left_hip_pitch_04"),
+            ObservationType.JointPos("q_left_hip_roll", xml_name="dof_left_hip_roll_03"),
             ObservationType.JointPos("q_left_hip_yaw", xml_name="dof_left_hip_yaw_03"),
             ObservationType.JointPos("q_left_knee", xml_name="dof_left_knee_04"),
             ObservationType.JointPos("q_left_ankle", xml_name="dof_left_ankle_02"),
             # ------------- JOINT VEL -------------
             ObservationType.FreeJointVel("dq_root", xml_name="root"),
-            ObservationType.JointVel(
-                "dq_right_shoulder_pitch", xml_name="dof_right_shoulder_pitch_03"
-            ),
-            ObservationType.JointVel(
-                "dq_right_shoulder_roll", xml_name="dof_right_shoulder_roll_03"
-            ),
-            ObservationType.JointVel(
-                "dq_right_shoulder_yaw", xml_name="dof_right_shoulder_yaw_02"
-            ),
+            ObservationType.JointVel("dq_right_shoulder_pitch", xml_name="dof_right_shoulder_pitch_03"),
+            ObservationType.JointVel("dq_right_shoulder_roll", xml_name="dof_right_shoulder_roll_03"),
+            ObservationType.JointVel("dq_right_shoulder_yaw", xml_name="dof_right_shoulder_yaw_02"),
             ObservationType.JointVel("dq_right_elbow", xml_name="dof_right_elbow_02"),
             ObservationType.JointVel("dq_right_wrist", xml_name="dof_right_wrist_00"),
-            ObservationType.JointVel(
-                "dq_left_shoulder_pitch", xml_name="dof_left_shoulder_pitch_03"
-            ),
-            ObservationType.JointVel(
-                "dq_left_shoulder_roll", xml_name="dof_left_shoulder_roll_03"
-            ),
-            ObservationType.JointVel(
-                "dq_left_shoulder_yaw", xml_name="dof_left_shoulder_yaw_02"
-            ),
+            ObservationType.JointVel("dq_left_shoulder_pitch", xml_name="dof_left_shoulder_pitch_03"),
+            ObservationType.JointVel("dq_left_shoulder_roll", xml_name="dof_left_shoulder_roll_03"),
+            ObservationType.JointVel("dq_left_shoulder_yaw", xml_name="dof_left_shoulder_yaw_02"),
             ObservationType.JointVel("dq_left_elbow", xml_name="dof_left_elbow_02"),
             ObservationType.JointVel("dq_left_wrist", xml_name="dof_left_wrist_00"),
-            ObservationType.JointVel(
-                "dq_right_hip_pitch", xml_name="dof_right_hip_pitch_04"
-            ),
-            ObservationType.JointVel(
-                "dq_right_hip_roll", xml_name="dof_right_hip_roll_03"
-            ),
-            ObservationType.JointVel(
-                "dq_right_hip_yaw", xml_name="dof_right_hip_yaw_03"
-            ),
+            ObservationType.JointVel("dq_right_hip_pitch", xml_name="dof_right_hip_pitch_04"),
+            ObservationType.JointVel("dq_right_hip_roll", xml_name="dof_right_hip_roll_03"),
+            ObservationType.JointVel("dq_right_hip_yaw", xml_name="dof_right_hip_yaw_03"),
             ObservationType.JointVel("dq_right_knee", xml_name="dof_right_knee_04"),
             ObservationType.JointVel("dq_right_ankle", xml_name="dof_right_ankle_02"),
-            ObservationType.JointVel(
-                "dq_left_hip_pitch", xml_name="dof_left_hip_pitch_04"
-            ),
-            ObservationType.JointVel(
-                "dq_left_hip_roll", xml_name="dof_left_hip_roll_03"
-            ),
+            ObservationType.JointVel("dq_left_hip_pitch", xml_name="dof_left_hip_pitch_04"),
+            ObservationType.JointVel("dq_left_hip_roll", xml_name="dof_left_hip_roll_03"),
             ObservationType.JointVel("dq_left_hip_yaw", xml_name="dof_left_hip_yaw_03"),
             ObservationType.JointVel("dq_left_knee", xml_name="dof_left_knee_04"),
             ObservationType.JointVel("dq_left_ankle", xml_name="dof_left_ankle_02"),
