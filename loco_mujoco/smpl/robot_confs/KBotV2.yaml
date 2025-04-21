@@ -34,11 +34,11 @@ site_joint_matches:
     smpl_joint: L_Knee
     equality_constraint_type: mjEQ_WELD
     torque_scale: 1.0
-  left_ankle_mimic: # Using the ankle mimic site we added
+  left_ankle_mimic:
     smpl_joint: L_Ankle
     equality_constraint_type: mjEQ_WELD
     torque_scale: 1.0
-  left_foot: # Using the original foot site (also marked as mimic)
+  left_foot:
     smpl_joint: L_Toe
     equality_constraint_type: mjEQ_WELD
     torque_scale: 1.0
@@ -62,23 +62,22 @@ site_joint_matches:
     smpl_joint: R_Knee
     equality_constraint_type: mjEQ_WELD
     torque_scale: 1.0
-  right_ankle_mimic: # Using the ankle mimic site we added
+  right_ankle_mimic:
     smpl_joint: R_Ankle
     equality_constraint_type: mjEQ_WELD
     torque_scale: 1.0
-  right_foot: # Using the original foot site (also marked as mimic)
+  right_foot:
     smpl_joint: R_Toe
     equality_constraint_type: mjEQ_WELD
     torque_scale: 1.0
 
-# Robot-specific T-pose adjustments (if needed, otherwise empty)
-# Example: If your robot's default pose isn't quite T-pose
-# robot_pose_modifier:
-#   - dof_right_shoulder_roll_03: "[0.0, 0.0, -1.57]" # Example: Roll right shoulder -90deg
+robot_pose_modifier:
+  - dof_left_shoulder_roll_03: "np.pi/2"
+  # - dof_left_elbow_02: "np.pi/2"
+  - dof_right_shoulder_roll_03: "-np.pi/2"
+  # - dof_right_elbow_02: "np.pi/2"
 
-# Optimization parameters (override defaults if needed)
 optimization_params:
-  z_offset_feet: 0.0 # Adjust if feet are not at z=0 in T-pose retargeting
+  z_offset_feet: 0.0
 
-# Environment parameters (can be empty if defaults are okay)
-env_params: {} 
+env_params: {}
