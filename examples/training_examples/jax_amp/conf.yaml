@@ -9,10 +9,13 @@ experiment:
   task_factory:
     name: ImitationFactory
     params:
-      default_dataset_conf:
-          task: run
+      # default_dataset_conf:
+      #     task: run
+      amass_dataset_conf:
+        rel_dataset_path: "ACCAD/ACCAD/Male1Walking_c3d/Walk B10 - Walk turn left 45_poses"
   env_params:
-    env_name: MjxUnitreeH1
+    # env_name: MjxUnitreeH1
+    env_name: KBotV2
     disable_arms: false
     headless: True
     horizon: 1000
@@ -23,14 +26,24 @@ experiment:
   hidden_layers: [512, 256]
   lr: 6e-5
   disc_lr: 5e-5
+  # # Sanity check
+  # num_envs: 64
+  # num_steps: 10
+  # total_timesteps: 10000
+  # update_epochs: 1
+  # n_disc_epochs: 2
+  # num_minibatches: 4
+
+  # Training
   num_envs: 2048
   num_steps: 14
-  total_timesteps: 75e6
+  total_timesteps: 20e6
   update_epochs: 4
-  disc_minibatch_size: 2048
-  proportion_env_reward: 0.5
   n_disc_epochs: 50
   num_minibatches: 32
+
+  disc_minibatch_size: 2048
+  proportion_env_reward: 0.5
   gamma: 0.99
   gae_lambda: 0.95
   clip_eps: 0.1
