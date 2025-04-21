@@ -1,35 +1,16 @@
 import numpy as np
-import os
-from pathlib import Path
-# Import the KBotV2 environment directly
-from loco_mujoco.environments import KBotV2, UnitreeG1
-
-# --- Configuration ---
-# Define the EXACT path to YOUR local trajectory file (still using the G1 squat)
-local_g1_squat_traj_path = Path("/home/ali/repos/ksim_stuff/loco-mujoco/loco_mujoco/datasets/local/UnitreeG1/squat.npz")
-
-# Check if the source trajectory file exists
-if not local_g1_squat_traj_path.exists():
-    print(f"Error: Local G1 trajectory file not found at {local_g1_squat_traj_path}")
-    print("Please ensure the path is correct.")
-    exit()
-
-# --- Create KBotV2 Environment ---
-print("Creating KBotV2 environment...")
-env = KBotV2()
-# env = UnitreeG1()
-print("Environment created.")
-
-# --- Load the Local (Unitree G1) Trajectory ---
-print(f"Loading G1 trajectory from {local_g1_squat_traj_path} into KBotV2...")
-# Use the load_trajectory method, suppressing the model mismatch warning
-env.load_trajectory(traj_path=str(local_g1_squat_traj_path))
-print("Trajectory loaded.")
-
-# --- Play the Trajectory ---
-print("Playing G1 trajectory on KBotV2 (expect incorrect motion)...")
-# Play one short episode
-env.play_trajectory(n_episodes=1, n_steps_per_episode=500, render=True)
-print("Playback finished.")
+from loco_mujoco.task_factories import ImitationFactory, LAFAN1DatasetConf, DefaultDatasetConf, AMASSDatasetConf
 
 
+# # example --> you can add as many datasets as you want in the lists!
+env = ImitationFactory.make("UnitreeH1",
+                            default_dataset_conf=DefaultDatasetConf(["squat", "walk"]),
+                            lafan1_dataset_conf=LAFAN1DatasetConf(["dance2_subject4", "walk1_subject1"]),
+                            # if SMPL and AMASS are installed, you can use the following:
+                            # amass_dataset_conf=AMASSDatasetConf(["DanceDB/DanceDB/20120911_TheodorosSourmelis/Capoeira_Theodoros_v2_C3D_poses",
+                            #                                     "KIT/12/WalkInClockwiseCircle11_poses",
+                            #                                     "HUMAN4D/HUMAN4D/Subject3_Medhi/INF_JumpingJack_S3_01_poses",
+                            #                                     'KIT/359/walking_fast05_poses']),
+                            n_substeps=20)
+
+env.play_trajectory(n_episodes=3, n_steps_per_episode=500, render=True)
