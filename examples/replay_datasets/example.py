@@ -14,3 +14,4 @@ env = ImitationFactory.make("UnitreeH1",
                             n_substeps=20)
 
 env.play_trajectory(n_episodes=3, n_steps_per_episode=500, render=True)
+
