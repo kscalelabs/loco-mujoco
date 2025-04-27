@@ -1,75 +1,71 @@
 # Inherits from defaults.yaml
 
+# Define reusable variables/defaults
+default_constraint_type: &weld_constraint mjEQ_WELD # Define the anchor here
+default_torque_scale: &default_torque 1.0 # Define the torque anchor here
+
 # Map mimic sites from kbot_v2.xml to SMPL joint names
 site_joint_matches:
   pelvis_mimic:
     smpl_joint: Pelvis
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   upper_body_mimic:
     smpl_joint: Chest
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   head_mimic:
     smpl_joint: Head
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   left_shoulder_mimic:
     smpl_joint: L_Shoulder
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   left_elbow_mimic:
     smpl_joint: L_Elbow
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   left_wrist_mimic:
     smpl_joint: L_Wrist
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   left_hip_mimic:
     smpl_joint: L_Hip
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   left_knee_mimic:
     smpl_joint: L_Knee
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
-  left_ankle_mimic:
-    smpl_joint: L_Ankle
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
-  left_foot:
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
+  left_foot_mimic:
     smpl_joint: L_Toe
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   right_shoulder_mimic:
     smpl_joint: R_Shoulder
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   right_elbow_mimic:
     smpl_joint: R_Elbow
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   right_wrist_mimic:
     smpl_joint: R_Wrist
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   right_hip_mimic:
     smpl_joint: R_Hip
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
   right_knee_mimic:
     smpl_joint: R_Knee
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
-  right_ankle_mimic:
-    smpl_joint: R_Ankle
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
-  right_foot:
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
+  right_foot_mimic:
     smpl_joint: R_Toe
-    equality_constraint_type: mjEQ_WELD
-    torque_scale: 1.0
+    equality_constraint_type: *weld_constraint # Use alias
+    torque_scale: *default_torque # Use alias
 
 robot_pose_modifier:
   - dof_left_shoulder_roll_03: "np.pi/2"
@@ -78,6 +74,8 @@ robot_pose_modifier:
   # - dof_right_elbow_02: "np.pi/2"
 
 optimization_params:
-  z_offset_feet: 0.0
+  z_offset_feet: -0.10
+  # disable_joint_limits_on_initialization: False
+
 
 env_params: {}
