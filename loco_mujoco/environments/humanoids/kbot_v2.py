@@ -187,15 +187,15 @@ class KBotV2(BaseRobotHumanoid):
             "left_wrist_mimic",
             "left_hip_mimic",
             "left_knee_mimic",
-            "left_ankle_mimic",
-            "left_foot",
+            # "left_ankle_mimic",
+            "left_foot_mimic",
             "right_shoulder_mimic",
             "right_elbow_mimic",
             "right_wrist_mimic",
             "right_hip_mimic",
             "right_knee_mimic",
-            "right_ankle_mimic",
-            "right_foot",
+            # "right_ankle_mimic",
+            "right_foot_mimic",
         ]
 
     @info_property
