@@ -37,11 +37,11 @@ site_joint_matches:
   left_knee_mimic:
     smpl_joint: L_Knee
     equality_constraint_type: *weld_constraint # Use alias
-    torque_scale: *default_torque # Use alias
+    torque_scale: 10 # Use alias
   left_foot_mimic:
-    smpl_joint: L_Toe
+    smpl_joint: L_Ankle
     equality_constraint_type: *weld_constraint # Use alias
-    torque_scale: *default_torque # Use alias
+    torque_scale: 10 # Use alias
   right_shoulder_mimic:
     smpl_joint: R_Shoulder
     equality_constraint_type: *weld_constraint # Use alias
@@ -61,11 +61,11 @@ site_joint_matches:
   right_knee_mimic:
     smpl_joint: R_Knee
     equality_constraint_type: *weld_constraint # Use alias
-    torque_scale: *default_torque # Use alias
+    torque_scale: 10 # Use alias
   right_foot_mimic:
-    smpl_joint: R_Toe
+    smpl_joint: R_Ankle
     equality_constraint_type: *weld_constraint # Use alias
-    torque_scale: *default_torque # Use alias
+    torque_scale: 10 # Use alias
 
 robot_pose_modifier:
   - dof_left_shoulder_roll_03: "np.pi/2"
@@ -74,7 +74,8 @@ robot_pose_modifier:
   # - dof_right_elbow_02: "np.pi/2"
 
 optimization_params:
-  z_offset_feet: -0.10
+  z_offset_feet: -0.0
+  disable_collision: true
   # disable_joint_limits_on_initialization: False
 
 

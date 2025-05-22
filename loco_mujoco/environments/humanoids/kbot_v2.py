@@ -14,7 +14,7 @@ class KBotV2(BaseRobotHumanoid):
     Mujoco environment of the KBotV2 robot.
     """
 
-    mjx_enabled = False  # Set to True if you create a Mjx-compatible version
+    mjx_enabled = True  # Set to True if you create a Mjx-compatible version
 
     def __init__(
         self,
