@@ -73,7 +73,7 @@ class KBotV2(BaseRobotHumanoid):
         """
         # Adapt joint names based on your kbot_v2.xml
         observation_spec = [  # ------------- JOINT POS -------------
-            ObservationType.FreeJointPosNoXY("q_root", xml_name="root"),
+            ObservationType.FreeJointPosNoXY("q_root", xml_name="floating_base"),
             ObservationType.JointPos("q_right_shoulder_pitch", xml_name="dof_right_shoulder_pitch_03"),
             ObservationType.JointPos("q_right_shoulder_roll", xml_name="dof_right_shoulder_roll_03"),
             ObservationType.JointPos("q_right_shoulder_yaw", xml_name="dof_right_shoulder_yaw_02"),
@@ -95,7 +95,7 @@ class KBotV2(BaseRobotHumanoid):
             ObservationType.JointPos("q_left_knee", xml_name="dof_left_knee_04"),
             ObservationType.JointPos("q_left_ankle", xml_name="dof_left_ankle_02"),
             # ------------- JOINT VEL -------------
-            ObservationType.FreeJointVel("dq_root", xml_name="root"),
+            ObservationType.FreeJointVel("dq_root", xml_name="floating_base"),
             ObservationType.JointVel("dq_right_shoulder_pitch", xml_name="dof_right_shoulder_pitch_03"),
             ObservationType.JointVel("dq_right_shoulder_roll", xml_name="dof_right_shoulder_roll_03"),
             ObservationType.JointVel("dq_right_shoulder_yaw", xml_name="dof_right_shoulder_yaw_02"),
@@ -220,7 +220,7 @@ class KBotV2(BaseRobotHumanoid):
         """
         Returns the name of the free joint of the root specified in the XML file.
         """
-        return "root"
+        return "floating_base"
 
     @info_property
     def root_height_healthy_range(self) -> Tuple[float, float]:
