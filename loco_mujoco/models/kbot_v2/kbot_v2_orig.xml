@@ -151,7 +151,7 @@
               <inertial pos="-0.001014 -0.013387 0.171456" quat="1.0 0.0 0.0 0.0" mass="2.343635" diaginertia="0.015645 0.014172 0.004016" />
               <geom name="KC_D_301R_R_Femur_Lower_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="Torso_Side_Right_material" type="mesh" mesh="KC_D_301R_R_Femur_Lower_Drive.stl" class="visual" />
               <body name="KC_D_401R_R_Shin_Drive" pos="0.020500 -0.021000 0.212000" quat="0.5000001633974483 0.4999999999999733 -0.49999983660255165 -0.4999999999999733">
-                <site name="right_knee_mimic" class="mimic" pos="0 0.0 -0.02"/>
+                <site name="right_knee_mimic" class="mimic" pos="0 0 0"/>
                 <joint name="dof_right_knee_04" type="hinge" ref="0.0" class="robstride_04" range="-2.705260 0" axis="0 0 1" />
                 <inertial pos="-0.024549 0.104152 0.018182" quat="1.0 0.0 0.0 0.0" mass="1.670592" diaginertia="0.014672 0.002924 0.014592" />
                 <geom name="KC_D_401R_R_Shin_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="Torso_Side_Right_material" type="mesh" mesh="KC_D_401R_R_Shin_Drive.stl" class="visual" />
@@ -163,7 +163,7 @@
                   <geom name="KB_D_501R_R_LEG_FOOT_visual_capsule_0" type="capsule" quat="1.000000 0.000000 0.000000 0.000000" fromto="-0.113899 0.038000 -0.029830 0.056761 0.038000 -0.029830" size="0.020000 0.105330" material="Torso_Side_Right_material" class="visual" />
                   <geom name="KB_D_501R_R_LEG_FOOT_collision_capsule_1" type="capsule" quat="1.000000 0.000000 0.000000 0.000000" fromto="-0.107318 0.038000 0.001538 0.055951 0.038000 0.001538" size="0.020000 0.105330" material="collision_material" class="collision" />
                   <geom name="KB_D_501R_R_LEG_FOOT_visual_capsule_1" type="capsule" quat="1.000000 0.000000 0.000000 0.000000" fromto="-0.107318 0.038000 0.001538 0.055951 0.038000 0.001538" size="0.020000 0.105330" material="Torso_Side_Right_material" class="visual" />
-                  <site name="right_foot_mimic" class="mimic" pos="0 0 -0.03"/>
+                  <site name="right_foot_mimic" class="mimic" pos="0 0 0"/>
                   <site name="right_foot" size="0.105 0.02 0.036" pos="-0.0283 0.038 -0.014" type="box" />
                 </body>
               </body>
@@ -184,7 +184,7 @@
               <inertial pos="0.001013 -0.013386 0.171458" quat="1.0 0.0 0.0 0.0" mass="2.343629" diaginertia="0.015644 0.014172 0.004016" />
               <geom name="KC_D_301L_L_Femur_Lower_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="Torso_Side_Right_material" type="mesh" mesh="KC_D_301L_L_Femur_Lower_Drive.stl" class="visual" />
               <body name="KC_D_401L_L_Shin_Drive" pos="-0.020500 -0.021000 0.212000" quat="0.5000001633974483 -0.4999999999999733 0.49999983660255165 -0.4999999999999733">
-                <site name="left_knee_mimic" class="mimic" pos="0 0 -0.02"/>
+                <site name="left_knee_mimic" class="mimic" pos="0 0 0"/>
                 <joint name="dof_left_knee_04" type="hinge" ref="0.0" class="robstride_04" range="0 2.705260" axis="0 0 1" />
                 <inertial pos="-0.024550 -0.104154 0.018183" quat="1.0 0.0 0.0 0.0" mass="1.670535" diaginertia="0.014672 0.002924 0.014592" />
                 <geom name="KC_D_401L_L_Shin_Drive_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="Torso_Side_Right_material" type="mesh" mesh="KC_D_401L_L_Shin_Drive.stl" class="visual" />
@@ -196,7 +196,7 @@
                   <geom name="KB_D_501L_L_LEG_FOOT_visual_capsule_0" type="capsule" quat="1.000000 0.000000 0.000000 0.000000" fromto="-0.100321 0.037847 -0.001769 0.056310 0.037847 -0.001769" size="0.020000 0.104567" material="Torso_Side_Right_material" class="visual" />
                   <geom name="KB_D_501L_L_LEG_FOOT_collision_capsule_1" type="capsule" quat="1.000000 0.000000 0.000000 0.000000" fromto="-0.112825 0.037847 0.029830 0.055951 0.037847 0.029830" size="0.020000 0.104567" material="collision_material" class="collision" />
                   <geom name="KB_D_501L_L_LEG_FOOT_visual_capsule_1" type="capsule" quat="1.000000 0.000000 0.000000 0.000000" fromto="-0.112825 0.037847 0.029830 0.055951 0.037847 0.029830" size="0.020000 0.104567" material="Torso_Side_Right_material" class="visual" />
-                  <site name="left_foot_mimic" class="mimic" pos="0 0 0.03"/>
+                  <site name="left_foot_mimic" class="mimic" pos="0 0 0"/>
                   <site name="left_foot" size="0.105 0.02 0.036" pos="-0.0283 0.038 0.014" type="box" />
                 </body>
               </body>
